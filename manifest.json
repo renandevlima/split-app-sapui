@@ -1,0 +1,34 @@
+{
+	"sap.app": {
+		"id": "sap.ui.core.sample.RoutingMasterDetail",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"config": {
+			"sample": {
+				"iframe": "RoutingMasterDetail.html",
+				"stretch": true,
+				"files": [
+					"routingApp/controller/data.json",
+					"routingApp/controller/Detail.controller.js",
+					"routingApp/controller/Master.controller.js",
+					"routingApp/view/App.view.xml",
+					"routingApp/view/Detail.view.xml",
+					"routingApp/view/Master.view.xml",
+					"routingApp/Component.js",
+					"routingApp/manifest.json",
+					"RoutingMasterDetail.html",
+					"manifest.json"
+				]
+			}
+		}
+	}
+}

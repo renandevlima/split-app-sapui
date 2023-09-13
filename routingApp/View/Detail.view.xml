@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+ xmlns="sap.m"
+ xmlns:l="sap.ui.layout"
+ xmlns:f="sap.ui.layout.form"
+ xmlns:core="sap.ui.core"
+controllerName="sap.ui.core.sample.RoutingMasterDetail.routingApp.controller.Detail">
+ <VBox class="sapUiSmallMargin">
+  <f:SimpleForm id="SimpleFormChange"
+   editable="false"
+   layout="ResponsiveGridLayout"
+   title="{employee>/name}"
+   labelSpanXL="3"
+   labelSpanL="3"
+   labelSpanM="3"
+   labelSpanS="12"
+   adjustLabelSpan="false"
+   emptySpanXL="4"
+   emptySpanL="4"
+   emptySpanM="4"
+   emptySpanS="0"
+   columnsXL="1"
+   columnsL="1"
+   columnsM="1"
+   singleContainerFullSize="false" 
+   visible="false">
+   <f:content  visible="{employee>/id}">
+    <Label text="Nome" />
+    <Input id="name" value="{employee>/name}" enabled="false"/>
+    <Label text="Sobrenome" enabled="false"/>
+    <Input id="lastName" value="{employee>/lastName}" enabled="false"></Input>
+    <Label text="cpf" enabled="false"/>
+    <Input id="cpf" value="{employee>/cpf}" enabled="false"></Input>
+    <Label text="Data de Nascimento" />
+    <Input id="born" value="{employee>/born}"  enabled="false"></Input>
+	<Label text="Endereço" />
+	<Textarea id="address" value="{employee>/address}"  enabled="false"></Textarea>
+   </f:content>
+
+	<Button id="editButton" text="Editar" press="onEditPress" />
+	<Button id="saveButton" text="Salvar" press="onSavePress" visible="false" />
+  </f:SimpleForm>
+ </VBox>
+
+</core:FragmentDefinition>

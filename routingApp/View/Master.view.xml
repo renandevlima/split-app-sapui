@@ -1,0 +1,38 @@
+<mvc:View
+	height="100%"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic"
+	displayBlock="true"
+	controllerName="sap.ui.core.sample.RoutingMasterDetail.routingApp.controller.Master">
+	<semantic:MasterPage title="Lista de Funcionários">
+				<Input
+					id="filterInput"
+					liveChange=".onFilterInputChange"
+					placeholder="Filtrar por nome ou sobrenome"
+				/>
+				<semantic:content>
+					<List
+						items="{listModel>/}"
+						headerText="Funcionários"
+						id="workerList"
+					>
+						<items>
+							<StandardListItem
+								title="{listModel>name}"
+								description="{listModel>lastName}"
+								info="{
+									parts: [{
+										path: 'listModel>born',
+										formatter: '.calculateAge'
+									}]
+								}"
+								type="Active"
+								press=".onEmployeeListItemPress"
+							/>
+						</items>
+					</List>
+				</semantic:content>
+			</semantic:MasterPage>
+</mvc:View>

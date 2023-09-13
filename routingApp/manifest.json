@@ -1,0 +1,57 @@
+{
+	"sap.app": {
+		"id": "sap.ui.core.sample.RoutingMasterDetail.routingApp",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.98.0"
+		},
+		"rootView": {
+			"viewName": "sap.ui.core.sample.RoutingMasterDetail.routingApp.view.App",
+			"type": "XML",
+			"async": true
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"path": "sap.ui.core.sample.RoutingMasterDetail.routingApp.view",
+				"controlId": "rootControl",
+				"type": "View",
+				"viewType": "XML",
+				"async": true
+			},
+			"routes": [
+				{
+					"name": "master",
+					"pattern": "",
+					"target": [
+						"master"
+					]
+				},
+				{
+					"name": "employeeDetails",
+					"pattern": "employees/:employeeId:",
+					"target": [
+						"master",
+						"employeeDetails"
+					]
+				}
+			],
+			"targets": {
+				"master": {
+					"name": "Master",
+					"controlAggregation": "masterPages",
+					"level": 0
+				},
+				"employeeDetails": {
+					"name": "Detail",
+					"controlAggregation": "detailPages",
+					"level": 1
+				}
+			}
+		}
+	}
+}
